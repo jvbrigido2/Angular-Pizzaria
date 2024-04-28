@@ -1,16 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 ">
-      <form (ngSubmit)="buscarBairro()">
-        <label for="nomeBairro">Nome do Bairro:</label>
-        <input type="text" id="nomeBairro" name="nomeBairro" [(ngModel)]="nomeBairro" class="form-control">
-        <button type="submit" class="btn btn-primary">Buscar</button>
-      </form>
-
-      @if(bairro){
-        <h1>{{ bairro.name }}</h1>
-        <p>Valor: {{ bairro.valor }}</p>
-      }
-    </div>
+<div class="app d-flex">
+  <div class="sidebar">
+    <ul>
+      <li>
+        <a routerLink="/" routerLinkActive="active">
+          <div class="icon-text">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            <span>Home</span>
+          </div>
+       </a>
+      </li>
+      <li>
+        <a routerLink="/adicionar-bairro" routerLinkActive="active"
+          >Adicionar Bairro</a
+        >
+      </li>
+      <li>
+        <a routerLink="/ver-bairros" routerLinkActive="active">Ver Bairros</a>
+      </li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <router-outlet></router-outlet>
   </div>
 </div>

@@ -1,0 +1,47 @@
+label{
+  color: black ;
+}
+h2{
+  margin-top: 10px;
+}
+input{
+  margin-bottom: 20px;
+}
+.container{
+  height: 18rem;
+  width: 16rem;
+}
+
+button.btn {
+  background-color: red; /* Fundo vermelho */
+  color: white;          /* Texto branco */
+  border: none;          /* Sem bordas */
+  padding: 10px 20px;    /* Espaçamento interno */
+  cursor: pointer;
+  margin-top: 10px; 
+  margin-right: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+button.btn:hover {
+  background-color: darkred; /* Cor ao passar o mouse */
+}
+
+#cancelar{
+  background-color: white; /* Fundo vermelho */
+  color: black;          /* Texto branco */
+  border: none;          /* Sem bordas */
+  padding: 10px 20px;    /* Espaçamento interno */
+  cursor: pointer;
+  margin-top: 10px; 
+  margin-right: 10px;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid;
+}
+
+#cancelar:hover{
+  background-color: grey;
+}
+

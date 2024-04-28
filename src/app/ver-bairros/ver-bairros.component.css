@@ -1,0 +1,41 @@
+
+
+.table{
+  height: 35rem;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffff;
+}
+
+td, th {
+  text-align: center; /* Alinha texto horizontalmente ao centro */
+ 
+}
+
+.highlighted {
+  background-color: #ffff99; /* Amarelo claro para destaque */
+}
+
+button {
+  background: none; /* Remove fundo do botão */
+  border: none; /* Remove bordas */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+.material-icons {
+  color: red; /* Cor do ícone (pode ser ajustada) */
+  font-size: 24px; /* Tamanho do ícone */
+}
+
+.pesquisa h3{
+  color: #ffff;
+}
+
+.lista h3{
+  color: #ffff;
+}
+
+
+
