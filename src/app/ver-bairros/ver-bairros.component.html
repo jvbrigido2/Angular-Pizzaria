@@ -1,0 +1,65 @@
+<div class="container vh-100 d-flex align-items-center justify-content-center">
+  <div class="row justify-content-between">
+    <div class="pesquisa col-md-4">
+      <h3>Pesquisar</h3>
+      <input
+        type="text"
+        [(ngModel)]="filtroNome"
+        placeholder="Buscar Bairro..."
+        (input)="filtrarBairros()"
+        class="form-control"
+      />
+    </div>
+    <div class="lista col-md-8">
+      <h3>Lista de Bairros</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th (click)="ordenarPor('name')">
+              Nome do Bairro
+              <span *ngIf="colunaOrdenacao === 'name'">
+                {{ direcaoOrdenacao === 'asc' ? '↑' : '↓' }}
+              </span>
+            </th>
+            <th (click)="ordenarPor('valor')">
+              Valor
+              <span *ngIf="colunaOrdenacao === 'valor'">
+                {{ direcaoOrdenacao === 'asc' ? '↑' : '↓' }}
+              </span>
+            </th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let bairro of bairros"
+            [class.highlighted]="
+              bairro.name.toLowerCase() === filtroNome.toLowerCase()
+            "
+          >
+            <td>{{ bairro.name }}</td>
+            <td>R$ {{ bairro.valor }}</td>
+            <td>
+              <button (click)="editarBairro(bairro)">
+                <span class="material-icons">edit</span>
+              </button>
+              <button (click)="deletarBairro(bairro.id)">
+                <span class="material-icons">delete</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="d-flex justify-content-center mt-4" *ngIf="isLoading">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Carregando...</span>
+        </div>
+      </div>
+
+      <div class="alert alert-danger mt-4" *ngIf="error">
+        {{ error }}
+      </div>
+    </div>
+  </div>
+</div>

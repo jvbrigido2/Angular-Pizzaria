@@ -1,0 +1,37 @@
+.container{
+  height: 10rem;
+  width: 25rem;
+}
+
+#confirmar{
+  background-color: red; /* Fundo vermelho */
+  color: white;          /* Texto branco */
+  border: none;          /* Sem bordas */
+  padding: 10px 20px;    /* Espaçamento interno */
+  cursor: pointer;
+  margin-top: 10px; 
+  margin-right: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+#cancelar{
+  background-color: white; /* Fundo vermelho */
+  color: black;          /* Texto branco */
+  border: none;          /* Sem bordas */
+  padding: 10px 20px;    /* Espaçamento interno */
+  cursor: pointer;
+  margin-top: 10px; 
+  margin-right: 10px;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid;
+}
+#confirmar:hover {
+  background-color: darkred; /* Cor ao passar o mouse */
+}
+
+#cancelar:hover{
+  background-color: grey;
+}
+

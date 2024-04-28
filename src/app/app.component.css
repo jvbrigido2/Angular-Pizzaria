@@ -1,0 +1,40 @@
+.app {
+  display: flex; /* Cria um layout flexível para manter a sidebar à esquerda */
+  height: 100vh; /* Garante que o layout ocupe toda a altura da tela */
+}
+
+.sidebar {
+  width: 200px;          /* Largura fixa para a sidebar */
+  background-color: #0C0D11; /* Fundo preto */
+  color: white;          /* Texto branco */
+  padding: 20px;          /* Espaçamento interno */
+  position: relative;    /* Mantém a barra lateral no lugar */
+}
+
+.sidebar ul {
+  list-style-type: none; /* Remove marcadores das listas */
+  padding: 0;            /* Remove espaçamento da lista */
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;  /* Espaçamento entre itens */
+}
+
+.sidebar ul li a {
+  color: white;           /* Texto branco */
+  text-decoration: none;  /* Sem sublinhado */
+}
+
+.main-content {
+  flex-grow: 1;          /* O conteúdo principal ocupa todo o espaço restante */
+  padding: 20px;          /* Espaçamento interno */
+}
+
+.icon-text {
+  display: flex; /* Alinha o ícone e o texto horizontalmente */
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.icon-text mat-icon {
+  margin-right: 8px; /* Espaço entre o ícone e o texto */
+}

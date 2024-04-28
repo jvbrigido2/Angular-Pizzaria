@@ -1,0 +1,26 @@
+h1{
+  color: #FFFF;
+}
+
+body{
+  height: 20%;
+}
+
+button.btn {
+  background-color: red; /* Fundo vermelho */
+  color: white;          /* Texto branco */
+  border: none;          /* Sem bordas */
+  padding: 10px 20px;    /* Espaçamento interno */
+  cursor: pointer;
+  margin-top: 10px; 
+  text-align: center;
+  justify-content: center;
+}
+
+button.btn:hover {
+  background-color: darkred; /* Cor ao passar o mouse */
+}
+
+.container{
+  text-align: center;
+}
