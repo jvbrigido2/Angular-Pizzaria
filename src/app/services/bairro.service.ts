@@ -7,11 +7,11 @@ import { Bairro } from '../adicionar-bairro/adicionar-bairro.component';
   providedIn: 'root',
 })
 export class BairroService {
-  private getBairroNome = 'https://localhost:7088/api/Bairro/nome';
-  private criarBairro = 'https://localhost:7088/api/Bairro/criar-bairro';
-  private getAllBairros = 'https://localhost:7088/api/Bairro/todos';
-  private putBairro = 'https://localhost:7088/api/Bairro/atualizar';
-  private deleteBairro = 'https://localhost:7088/api/Bairro/deletar';
+  private getBairroNome = 'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/nome';
+  private criarBairro = 'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/criar-bairro';
+  private getAllBairros = 'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/todos';
+  private putBairro = 'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/atualizar';
+  private deleteBairro = 'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/deletar';
 
   constructor(private http: HttpClient) {}
 
