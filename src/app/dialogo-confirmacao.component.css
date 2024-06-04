@@ -1,8 +1,12 @@
 .container{
   height: 10rem;
   width: 25rem;
+  border-radius: 8px;
 }
 
+p{
+  margin-left: 15px;
+}
 #confirmar{
   background-color: red; /* Fundo vermelho */
   color: white;          /* Texto branco */
@@ -11,8 +15,10 @@
   cursor: pointer;
   margin-top: 10px; 
   margin-right: 10px;
+  margin-left: 110px;
   text-align: center;
   justify-content: center;
+  border: 1px solid;
 }
 
 #cancelar{
@@ -23,6 +29,7 @@
   cursor: pointer;
   margin-top: 10px; 
   margin-right: 10px;
+  margin-left: 10px;
   text-align: center;
   justify-content: center;
   border: 1px solid;

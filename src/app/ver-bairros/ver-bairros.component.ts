@@ -45,7 +45,7 @@ export class VerBairrosComponent implements OnInit, OnDestroy {
     this.subscription = this.bairroService.listarBairros().subscribe({
       next: (bairros: Bairro[]) => {
         this.bairros = bairros;
-        this.ordenarBairros(); 
+        this.ordenarBairros();
         this.bairrosOriginais = [...bairros];
         this.isLoading = false;
       },
@@ -63,7 +63,7 @@ export class VerBairrosComponent implements OnInit, OnDestroy {
         const resultado = a.name.localeCompare(b.name);
         return this.direcaoOrdenacao === 'asc' ? resultado : -resultado;
       } else if (this.colunaOrdenacao === 'valor') {
-        const resultado = a.valor - b.valor;
+        const resultado = a.value - b.value;
         return this.direcaoOrdenacao === 'asc' ? resultado : -resultado;
       }
       return 0;

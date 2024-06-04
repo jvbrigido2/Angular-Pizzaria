@@ -20,11 +20,13 @@ import { Bairro } from './adicionar-bairro/adicionar-bairro.component';
         <label>Valor</label>
       </div>
       <div>
-        <input type="number" [(ngModel)]="bairro.valor" />
+        <input type="number" [(ngModel)]="bairro.value" />
       </div>
       <div>
         <button class="btn btn-primary" (click)="salvar()">Salvar</button>
-        <button id="cancelar" class="btn btn-secondary" (click)="fechar()">Cancelar</button>
+        <button id="cancelar" class="btn btn-secondary" (click)="fechar()">
+          Cancelar
+        </button>
       </div>
     </div>
   `,

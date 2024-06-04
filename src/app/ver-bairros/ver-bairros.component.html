@@ -18,13 +18,13 @@
             <th (click)="ordenarPor('name')">
               Nome do Bairro
               <span *ngIf="colunaOrdenacao === 'name'">
-                {{ direcaoOrdenacao === 'asc' ? '↑' : '↓' }}
+                {{ direcaoOrdenacao === "asc" ? "↑" : "↓" }}
               </span>
             </th>
             <th (click)="ordenarPor('valor')">
               Valor
               <span *ngIf="colunaOrdenacao === 'valor'">
-                {{ direcaoOrdenacao === 'asc' ? '↑' : '↓' }}
+                {{ direcaoOrdenacao === "asc" ? "↑" : "↓" }}
               </span>
             </th>
             <th>Ações</th>
@@ -38,7 +38,7 @@
             "
           >
             <td>{{ bairro.name }}</td>
-            <td>R$ {{ bairro.valor }}</td>
+            <td>R$ {{ bairro.value }}</td>
             <td>
               <button (click)="editarBairro(bairro)">
                 <span class="material-icons">edit</span>
