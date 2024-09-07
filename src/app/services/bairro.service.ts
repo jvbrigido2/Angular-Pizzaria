@@ -2,21 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Bairro } from '../adicionar-bairro/adicionar-bairro.component';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BairroService {
   private getBairroNome =
-    'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/nome';
+    `${environment.apiLocalUrl}/bairros/bairro`;
   private criarBairro =
-    'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/criar-bairro';
+    `${environment.apiLocalUrl}/bairros`;
   private getAllBairros =
-    'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/todos';
+    `${environment.apiLocalUrl}/bairros`;
   private putBairro =
-    'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/atualizar';
+    `${environment.apiLocalUrl}/bairros/bairro`;
   private deleteBairro =
-    'https://app-pizzaria-estrela-2.azurewebsites.net/api/Bairro/deletar';
+    `${environment.apiLocalUrl}/bairros/bairro`;
 
   constructor(private http: HttpClient) {}
 
@@ -34,16 +35,15 @@ export class BairroService {
   }
 
   listarBairros(): Observable<Bairro[]> {
-    return this.http.get<Bairro[]>(this.getAllBairros); // Retorna todos os bairros
+    return this.http.get<Bairro[]>(this.getAllBairros); 
   }
   atualizarBairro(id: number, bairro: Bairro): Observable<Bairro> {
-    // Espera um ID e dados do bairro
-    const url = `${this.putBairro}/${id}`; // Constrói a URL para a atualização
-    return this.http.put<Bairro>(url, bairro); // Faz uma requisição PUT com o bairro atualizado
+    const url = `${this.putBairro}/${id}`; 
+    return this.http.put<Bairro>(url, bairro);
   }
 
   deletarBairro(bairroId: number): Observable<void> {
-    const url = `${this.deleteBairro}/${bairroId}`; // URL para deletar pelo ID
-    return this.http.delete<void>(url); // Retorna uma chamada de exclusão
+    const url = `${this.deleteBairro}/${bairroId}`; 
+    return this.http.delete<void>(url);
   }
 }
