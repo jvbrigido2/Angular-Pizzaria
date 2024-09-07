@@ -63,7 +63,7 @@ export class VerBairrosComponent implements OnInit, OnDestroy {
         const resultado = a.name.localeCompare(b.name);
         return this.direcaoOrdenacao === 'asc' ? resultado : -resultado;
       } else if (this.colunaOrdenacao === 'valor') {
-        const resultado = a.value - b.value;
+        const resultado = a.tax - b.tax;
         return this.direcaoOrdenacao === 'asc' ? resultado : -resultado;
       }
       return 0;

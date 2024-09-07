@@ -16,7 +16,7 @@
       </form>
       <div class="mt-3">
         @if(bairro){
-        <h1>Taxa: R$ {{ bairro.value }}.00</h1>
+        <h1>Taxa: R$ {{ bairro.tax }}.00</h1>
         }@else {
         <p class="text-danger">{{ errorMessage }}</p>
         }

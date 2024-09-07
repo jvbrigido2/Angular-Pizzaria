@@ -7,7 +7,7 @@ import { BairroService } from '../services/bairro.service';
 export interface Bairro {
   id: number;
   name: string;
-  value: number;
+  tax: number;
 }
 
 @Component({
@@ -18,7 +18,7 @@ export interface Bairro {
   styleUrl: './adicionar-bairro.component.css',
 })
 export class AdicionarBairroComponent implements OnInit {
-  bairro: Bairro = { id: 0, name: '', value: 0 };
+  bairro: Bairro = { id: 0, name: '', tax: 0 };
   errorMessage: string = '';
   successMessage: string = '';
 
