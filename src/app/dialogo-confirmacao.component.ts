@@ -24,10 +24,10 @@ export class DialogoConfirmacaoComponent {
   constructor(public dialogRef: MatDialogRef<DialogoConfirmacaoComponent>) {}
 
   confirmar() {
-    this.dialogRef.close(true); // Retorna confirmação
+    this.dialogRef.close(true);
   }
 
   fechar() {
-    this.dialogRef.close(false); // Fecha sem confirmar
+    this.dialogRef.close(false);
   }
 }

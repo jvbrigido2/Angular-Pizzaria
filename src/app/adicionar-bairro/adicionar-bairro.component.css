@@ -7,10 +7,10 @@ body{
 }
 
 button.btn {
-  background-color: red; /* Fundo vermelho */
-  color: white;          /* Texto branco */
-  border: none;          /* Sem bordas */
-  padding: 10px 20px;    /* Espaçamento interno */
+  background-color: red;
+  color: white;          
+  border: none;         
+  padding: 10px 20px;    
   cursor: pointer;
   margin-top: 10px; 
   text-align: center;
@@ -18,7 +18,7 @@ button.btn {
 }
 
 button.btn:hover {
-  background-color: darkred; /* Cor ao passar o mouse */
+  background-color: darkred; 
 }
 
 .container{

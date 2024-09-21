@@ -1,6 +1,7 @@
 
 
 .table{
+  border-radius: 8px;
   height: 35rem;
   overflow: scroll;
   display: flex;
@@ -10,23 +11,23 @@
 }
 
 td, th {
-  text-align: center; /* Alinha texto horizontalmente ao centro */
+  text-align: center; 
  
 }
 
 .highlighted {
-  background-color: #ffff99; /* Amarelo claro para destaque */
+  background-color: #ffff99;
 }
 
 button {
-  background: none; /* Remove fundo do botão */
-  border: none; /* Remove bordas */
-  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  background: none; 
+  border: none; 
+  cursor: pointer; 
 }
 
 .material-icons {
-  color: red; /* Cor do ícone (pode ser ajustada) */
-  font-size: 24px; /* Tamanho do ícone */
+  color: red;
+  font-size: 24px; 
 }
 
 .pesquisa h3{
