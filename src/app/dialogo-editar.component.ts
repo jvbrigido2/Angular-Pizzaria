@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Bairro } from './adicionar-bairro/adicionar-bairro.component';
+import { Bairro } from './model/bairro-model';
 
 @Component({
   selector: 'app-dialogo-editar',

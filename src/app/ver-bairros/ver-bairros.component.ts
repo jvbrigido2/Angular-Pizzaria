@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
-import { Bairro } from '../adicionar-bairro/adicionar-bairro.component';
+import { Bairro } from '../model/bairro-model';
 import { DialogoConfirmacaoComponent } from '../dialogo-confirmacao.component';
 import { DialogoEditarComponent } from '../dialogo-editar.component';
 import { BairroService } from '../services/bairro.service';
@@ -21,8 +21,8 @@ export class VerBairrosComponent implements OnInit, OnDestroy {
   isLoading = false;
   error = '';
   filtroNome: string = '';
-  colunaOrdenacao: string = 'name'; // Coluna padrão de ordenação
-  direcaoOrdenacao: string = 'asc'; // Direção padrão de ordenação
+  colunaOrdenacao: string = 'name'; 
+  direcaoOrdenacao: string = 'asc'; 
   private subscription: Subscription | null = null;
 
   constructor(
@@ -77,42 +77,40 @@ export class VerBairrosComponent implements OnInit, OnDestroy {
       this.colunaOrdenacao = coluna;
       this.direcaoOrdenacao = 'asc';
     }
-    this.ordenarBairros(); // Reaplica a ordenação ao alterar a coluna ou a direção
+    this.ordenarBairros(); 
   }
 
   filtrarBairros() {
-    const busca = this.filtroNome.trim().toLowerCase(); // Normaliza a busca
+    const busca = this.filtroNome.trim().toLowerCase(); 
     this.bairros = this.bairrosOriginais.filter((b) =>
       b.name.toLowerCase().includes(busca)
-    ); // Filtra por nome
+    ); 
   }
   editarBairro(bairro: Bairro) {
     const dialogRef = this.dialog.open(DialogoEditarComponent, {
-      data: bairro, // Passa o bairro para o modal
+      data: bairro, 
     });
 
     dialogRef.afterClosed().subscribe((resultado) => {
       if (resultado) {
-        // Atualiza o bairro no banco de dados
         this.bairroService
-          .atualizarBairro(resultado.id, resultado) // Função de serviço para atualizar
+          .atualizarBairro(resultado.id, resultado) 
           .subscribe({
-            next: () => this.loadAllBairros(), // Recarrega a lista de bairros
+            next: () => this.loadAllBairros(), 
             error: (err) => console.error('Erro ao atualizar bairro:', err),
           });
       }
     });
   }
-  deletarBairro(bairroId: number) {
+  deletarBairro(bairroId: string) {
     const dialogRef = this.dialog.open(DialogoConfirmacaoComponent);
 
     dialogRef.afterClosed().subscribe((confirmacao) => {
       if (confirmacao) {
-        // Deletar o bairro
         this.bairroService
-          .deletarBairro(bairroId) // Função de serviço para deletar
+          .deletarBairro(bairroId)
           .subscribe({
-            next: () => this.loadAllBairros(), // Recarrega a lista de bairros
+            next: () => this.loadAllBairros(),
             error: (err) => console.error('Erro ao deletar bairro:', err),
           });
       }

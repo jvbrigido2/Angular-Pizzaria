@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Bairro } from '../adicionar-bairro/adicionar-bairro.component';
+import { Bairro } from '../model/bairro-model';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -15,9 +15,9 @@ export class BairroService {
   private getAllBairros =
     `${environment.apiLocalUrl}/bairros`;
   private putBairro =
-    `${environment.apiLocalUrl}/bairros/bairro`;
+    `${environment.apiLocalUrl}/bairros`;
   private deleteBairro =
-    `${environment.apiLocalUrl}/bairros/bairro`;
+    `${environment.apiLocalUrl}/bairros`;
 
   constructor(private http: HttpClient) {}
 
@@ -37,12 +37,12 @@ export class BairroService {
   listarBairros(): Observable<Bairro[]> {
     return this.http.get<Bairro[]>(this.getAllBairros); 
   }
-  atualizarBairro(id: number, bairro: Bairro): Observable<Bairro> {
+  atualizarBairro(id: string, bairro: Bairro): Observable<Bairro> {
     const url = `${this.putBairro}/${id}`; 
     return this.http.put<Bairro>(url, bairro);
   }
 
-  deletarBairro(bairroId: number): Observable<void> {
+  deletarBairro(bairroId: string): Observable<void> {
     const url = `${this.deleteBairro}/${bairroId}`; 
     return this.http.delete<void>(url);
   }

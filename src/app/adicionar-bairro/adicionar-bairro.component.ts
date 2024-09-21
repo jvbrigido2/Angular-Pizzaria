@@ -3,12 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { catchError, throwError } from 'rxjs';
 import { BairroService } from '../services/bairro.service';
+import { Bairro } from '../model/bairro-model';
 
-export interface Bairro {
-  id: number;
-  name: string;
-  tax: number;
-}
 
 @Component({
   selector: 'app-adicionar-bairro',
@@ -18,7 +14,7 @@ export interface Bairro {
   styleUrl: './adicionar-bairro.component.css',
 })
 export class AdicionarBairroComponent implements OnInit {
-  bairro: Bairro = { id: 0, name: '', tax: 0 };
+  bairro: Bairro = { id: '', name: '', tax: 0 };
   errorMessage: string = '';
   successMessage: string = '';
 
@@ -33,8 +29,8 @@ export class AdicionarBairroComponent implements OnInit {
         catchError((error) => {
           if (error.status === 409) {
             this.successMessage = '';
-            this.errorMessage = 'Bairro com esse nome já existe.'; // Set error message
-            return throwError(error); // Rethrow the error to prevent form submission
+            this.errorMessage = 'Bairro com esse nome já existe.';
+            return throwError(error); 
           } else {
             console.error('Erro ao adicionar bairro:', error);
             return throwError(error);
@@ -44,7 +40,7 @@ export class AdicionarBairroComponent implements OnInit {
       .subscribe(() => {
         console.log('Bairro adicionado com sucesso!');
         this.errorMessage = '';
-        this.successMessage = 'Bairro Criado com Sucesso!'; // Clear error message on success
+        this.successMessage = 'Bairro Criado com Sucesso!';
       });
   }
 }
