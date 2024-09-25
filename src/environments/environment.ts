@@ -1,3 +1,3 @@
 export const environment = {
-    apiLocalUrl: 'http://localhost:8080/api',
+    apiLocalUrl: 'http://ec2-15-229-232-105.sa-east-1.compute.amazonaws.com/api',
   };

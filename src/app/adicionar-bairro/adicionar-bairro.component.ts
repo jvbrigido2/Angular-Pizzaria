@@ -41,6 +41,8 @@ export class AdicionarBairroComponent implements OnInit {
         console.log('Bairro adicionado com sucesso!');
         this.errorMessage = '';
         this.successMessage = 'Bairro Criado com Sucesso!';
+        this.bairro.name='';
+        this.bairro.tax=0;
       });
   }
 }

@@ -1,16 +1,28 @@
 button.btn {
-  background-color: red; /* Fundo vermelho */
-  color: white;          /* Texto branco */
-  border: none;          /* Sem bordas */
-  padding: 10px 20px;    /* Espaçamento interno */
+  background-color: red;
+  color: white;          
+  border: none;          
+  padding: 10px 20px;  
   cursor: pointer;
-  margin-top: 10px;      /* Cursor de mão */
+  margin-top: 10px;    
 }
 
 button.btn:hover {
-  background-color: darkred; /* Cor ao passar o mouse */
+  background-color: darkred;
 }
 
 .container {
-  text-align: center; /* Para centralizar o conteúdo dentro do container */
+  text-align: center; 
+}
+
+/* Aumenta o tamanho da fonte do texto */
+.texto-grande {
+  font-size: 1.5rem; /* ou o tamanho que você preferir */
+}
+
+/* Estilo para texto em vermelho vibrante */
+.texto-vermelho-vibrante {
+  color: #ff0000; 
+  font-weight: bold;
+  font-size: 2rem; 
 }

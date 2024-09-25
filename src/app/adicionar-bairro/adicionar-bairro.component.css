@@ -24,3 +24,9 @@ button.btn:hover {
 .container{
   text-align: center;
 }
+
+.texto-vermelho-vibrante {
+  color: #ff0000; 
+  font-weight: bold;
+  font-size: 1.6rem; 
+}

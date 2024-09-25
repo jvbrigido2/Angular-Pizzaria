@@ -5,25 +5,30 @@
         <h1>Buscar Bairro</h1>
       </div>
       <form (ngSubmit)="buscarBairro()">
-        <label for="nomeBairro">Nome do Bairro</label>
+        <label for="nomeBairro" class="texto-grande">Nome do Bairro</label>
         <input
           type="text"
           id="nomeBairro"
           name="nomeBairro"
           [(ngModel)]="nomeBairro"
-          class="form-control"
+          class="form-control texto-grande"
+          autocomplete="off"
         />
         <div>
-          <button type="submit" class="btn btn-primary">Buscar</button>
+          <button type="submit" class="btn btn-primary mt-3 texto-grande">Buscar</button>
         </div>
       </form>
+
       <div class="mt-3">
-        @if(bairro){
-        <h1>Taxa: R$ {{ bairro.tax }}.00</h1>
-        }@else {
-        <p class="text-danger">{{ errorMessage }}</p>
-        }
+        <h1 *ngIf="bairro">Taxa: R$ {{ bairro?.tax }}.00</h1>
       </div>
+      <div class="mt-4 text-danger texto-vermelho-vibrante" *ngIf="sugestao && !errorMessage">
+        Você quis dizer: 
+        <a href="#" (click)="aplicarSugestao(sugestao)">{{ sugestao }}</a>?
+      </div>
+      <p *ngIf="!sugestao && errorMessage" class="text-danger texto-vermelho-vibrante">
+        {{ errorMessage }}
+      </p>
     </div>
   </div>
 </div>
